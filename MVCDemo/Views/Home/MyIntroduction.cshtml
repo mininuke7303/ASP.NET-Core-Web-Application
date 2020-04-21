@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "My Introduction";
+}
+
+<div class="row">
+    <h2>MyIntroduction</h2>
+    <div class="col-md-6">
+        <p>내 소개입니다.</p>
+        <button type="button" class="btn" onclick="popupAlert();">이건 버튼</button>
+
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email Address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else</small>
+            </div>
+        </form>
+        <button type="button" class="btn" style="width:300px;" onclick="displayEmail();">저장</button>
+    </div>
+
+
+    <div class="col-md-6">
+        <p>경기도 용인시 기흥구에 거주합니다.</p>
+    </div>
+
+
+    <script>
+        function popupAlert() {
+            alert("안녕하세요..");
+        }
+
+
+        function displayEmail() {
+            //alert('클릭');
+            var enterEmail = document.getElementById('exampleInputEmail1')
+
+            if (enterEmail.value === "") {
+                alert("이메일 주소를 입력하세요..");
+                return;
+            }
+            if (confirm(`입력하신 이메일이 ${enterEmail.value}이 맞습니까?`)) {
+                alert(`입력하신 주소는 ${enterEmail.value}입니다.`);
+            }
+            else {
+                alert("다시 입력해 주세요..");
+            }
+        }
+    </script>
+</div>
+
+
