@@ -7,10 +7,21 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace DemoAPI.Controllers {
+    /// <summary>
+    /// This where I give you ~~~~ bla bla
+    /// </summary>
     public class PeopleController : ApiController {
 
         List<Person> people = new List<Person>();
 
+
+
+        /// <summary>
+        /// Gets a list of the first names of all users.
+        /// </summary>
+        /// <param name="userId">The unique identifier or this person.</param>
+        /// <param name="age">We wnat to know how old they are.</param>
+        /// <returns>A list of first names.. duh</returns>
         [Route("api/People/GetFirstNames/{userId:int}/{age:int}")]
         [HttpGet]
         public List<string> GetFirstNames(string userId, int age) {
